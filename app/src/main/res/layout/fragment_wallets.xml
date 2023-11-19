@@ -6,17 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".activities.HomeActivity">
 
-    <!-- Add your UI elements inside the ConstraintLayout -->
     <TextView
-        android:id="@+id/wallets"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello, Fragment!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="160dp"
+        android:text="No wallets added yet!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Add more UI elements as needed -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewWalletList"
+        android:layout_width="409dp"
+        android:layout_height="481dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

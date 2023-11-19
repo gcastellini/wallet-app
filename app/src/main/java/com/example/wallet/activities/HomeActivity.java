@@ -7,20 +7,28 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.wallet.R;
 import com.example.wallet.adapters.MyPagerAdapter;
+import com.example.wallet.models.WalletData;
+import com.example.wallet.utils.WalletUtils;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
     private final String [] data ={"Dashboards","Wallets","Info"};
 
+    private List<WalletData> wallets;
     private MenuItem item;
+
 
 
 
@@ -33,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, WalletsActivity.class);
         startActivity(intent);
         return super.onOptionsItemSelected(item);
     }
@@ -48,9 +56,14 @@ public class HomeActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        wallets= WalletUtils.loadWallets(this);
+
+        Bundle intent = getIntent().getExtras();
+
+
         ViewPager2 viewPager = findViewById(R.id.pager);
         viewPager.setAdapter(
-                new MyPagerAdapter(this)
+                new MyPagerAdapter(this,intent,wallets)
         );
 
 

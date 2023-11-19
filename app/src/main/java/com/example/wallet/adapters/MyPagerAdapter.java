@@ -1,5 +1,7 @@
 package com.example.wallet.adapters;
 
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -10,12 +12,19 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.example.wallet.fragments.DashboardsFragment;
 import com.example.wallet.fragments.InfoFragment;
 import com.example.wallet.fragments.WalletsFragment;
+import com.example.wallet.models.WalletData;
+
+import java.util.List;
 
 public class MyPagerAdapter extends FragmentStateAdapter {
     private final String [] data ={"Dashboards","Wallets","Info"};
+    private Bundle mData;
+    private List<WalletData> walletDataList;
 
-    public MyPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+    public MyPagerAdapter(@NonNull FragmentActivity fragmentActivity, Bundle data, List<WalletData> walletDataList) {
         super(fragmentActivity);
+        this.mData = data;
+        this.walletDataList=walletDataList;
     }
 
     public MyPagerAdapter(@NonNull Fragment fragment) {
@@ -34,7 +43,7 @@ public class MyPagerAdapter extends FragmentStateAdapter {
             case 0:
                 return new DashboardsFragment(data[position]);
             case 1:
-                return new WalletsFragment(data[position]);
+                return new WalletsFragment(data[position],mData,walletDataList);
             case 2:
                 return new InfoFragment(data[position]);
             default:
