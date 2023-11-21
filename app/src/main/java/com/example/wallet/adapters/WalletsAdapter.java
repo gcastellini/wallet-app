@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wallet.R;
 import com.example.wallet.models.WalletData;
+import com.example.wallet.utils.WalletUtils;
 
 import org.w3c.dom.Text;
 
@@ -47,7 +49,18 @@ public class WalletsAdapter extends RecyclerView.Adapter<WalletsAdapter.WalletVi
         lblWalletCurrency.setText(wallet.getCurrency());
         TextView lblWalletAmount= holder.itemView.findViewById(R.id.walletAmountTextView);
         lblWalletAmount.setText(wallet.getAmount());
+        Button deleteButton = holder.itemView.findViewById(R.id.deleteButton);
+        deleteButton.setOnClickListener(view -> {
+            deleteWallet(position);
+        });
 
+    }
+
+    private void deleteWallet(int position) {
+        walletList.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, getItemCount());
+        WalletUtils.saveWallets(context,walletList);
     }
 
     @Override

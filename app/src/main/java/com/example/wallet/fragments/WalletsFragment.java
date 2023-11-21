@@ -1,5 +1,6 @@
 package com.example.wallet.fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -17,6 +18,7 @@ import com.example.wallet.R;
 import com.example.wallet.activities.HomeActivity;
 import com.example.wallet.adapters.WalletsAdapter;
 import com.example.wallet.models.WalletData;
+import com.example.wallet.utils.WalletUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +30,7 @@ public class WalletsFragment extends Fragment {
 
     private Bundle mData;
     List<WalletData> walletList;
+
 
 
     private final String title;
@@ -50,17 +53,19 @@ public class WalletsFragment extends Fragment {
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
             TextView noWalletsTextView = view.findViewById(R.id.textView4);
             noWalletsTextView.setVisibility(View.GONE);
+        } else {
+            TextView noWalletsTextView = view.findViewById(R.id.textView4);
+            noWalletsTextView.setVisibility(View.VISIBLE);
         }
 
-        if (mData != null){
+        if (mData != null) {
             recyclerView = view.findViewById(R.id.recyclerViewWalletList);
             walletList = (List<WalletData>) mData.get("walletsList");
-            adapter = new WalletsAdapter(walletList,getActivity());
+            adapter = new WalletsAdapter(walletList, getActivity());
             recyclerView.setAdapter(adapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-            TextView noWalletsTextView = view.findViewById(R.id.textView4);
-            noWalletsTextView.setVisibility(View.GONE);
         }
+
         return view;
     }
 

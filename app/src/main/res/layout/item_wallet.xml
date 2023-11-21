@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF">
 
     <TextView
         android:id="@+id/walletNameTextView"
-        android:layout_width="107dp"
-        android:layout_height="29dp"
+        android:layout_width="93dp"
+        android:layout_height="39dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:text="Name"
+        android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/walletCurrencyTextView"
@@ -22,8 +24,8 @@
 
     <TextView
         android:id="@+id/walletCurrencyTextView"
-        android:layout_width="138dp"
-        android:layout_height="29dp"
+        android:layout_width="105dp"
+        android:layout_height="38dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="32dp"
         android:layout_weight="1"
@@ -37,13 +39,24 @@
 
     <TextView
         android:id="@+id/walletAmountTextView"
-        android:layout_width="100dp"
-        android:layout_height="29dp"
+        android:layout_width="93dp"
+        android:layout_height="38dp"
         android:layout_marginTop="64dp"
         android:text="Amount"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/walletCurrencyTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="62dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="64dp"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@android:drawable/ic_delete"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/walletAmountTextView"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

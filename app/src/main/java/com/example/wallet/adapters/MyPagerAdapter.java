@@ -41,13 +41,13 @@ public class MyPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch(position) {
             case 0:
-                return new DashboardsFragment(data[position]);
+                return new DashboardsFragment(walletDataList);
             case 1:
                 return new WalletsFragment(data[position],mData,walletDataList);
             case 2:
                 return new InfoFragment(data[position]);
             default:
-                return new DashboardsFragment(data[position]);
+                return new DashboardsFragment(walletDataList);
         }
     }
 

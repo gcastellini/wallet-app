@@ -7,15 +7,46 @@
     tools:context=".activities.HomeActivity">
 
     <!-- Add your UI elements inside the ConstraintLayout -->
+
     <TextView
-        android:id="@+id/dashboards"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello, Fragment!"
+        android:id="@+id/dashboards2"
+        android:layout_width="334dp"
+        android:layout_height="47dp"
+        android:text="Total Wallets Value"
+        android:textAlignment="center"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.356" />
+
+    <TextView
+        android:id="@+id/editTextNumber"
+        android:layout_width="285dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="default"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dashboards2" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="247dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/dashboards2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.753" />
 
     <!-- Add more UI elements as needed -->
 

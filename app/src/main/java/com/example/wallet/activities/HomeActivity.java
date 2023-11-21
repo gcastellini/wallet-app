@@ -19,7 +19,6 @@ import com.example.wallet.utils.WalletUtils;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
@@ -29,6 +28,8 @@ public class HomeActivity extends AppCompatActivity {
     private List<WalletData> wallets;
     private MenuItem item;
 
+    private MenuItem logout_item;
+
 
 
 
@@ -37,12 +38,21 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         new MenuInflater(this).inflate(R.menu.list,menu);
         item = menu.findItem(R.id.add_wallet);
+        logout_item = menu.findItem(R.id.logout);
         return super.onCreateOptionsMenu(menu);
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
-        Intent intent = new Intent(this, WalletsActivity.class);
-        startActivity(intent);
+        switch (item.getItemId()){
+            case 2131231226:
+                Intent intent = new Intent(this, WalletsActivity.class);
+                startActivity(intent);
+                return true;
+            case 2131231251:
+                Intent logoutIntent = new Intent(this, LoginActivity.class);
+                startActivity(logoutIntent);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -86,6 +96,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 item.setVisible(tab.getPosition() == 1);
+                logout_item.setVisible(tab.getPosition() == 0);
             }
 
             @Override
