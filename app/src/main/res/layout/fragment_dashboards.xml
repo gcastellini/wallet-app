@@ -12,7 +12,7 @@
         android:id="@+id/dashboards2"
         android:layout_width="334dp"
         android:layout_height="47dp"
-        android:text="Total Wallets Value"
+        android:text="@string/total"
         android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"

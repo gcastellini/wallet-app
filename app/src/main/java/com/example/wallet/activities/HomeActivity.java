@@ -26,7 +26,7 @@ public class HomeActivity extends AppCompatActivity {
     private final String [] data ={"Dashboards","Wallets","Info"};
 
     private List<WalletData> wallets;
-    private MenuItem item;
+    private MenuItem add_wallet_item;
 
     private MenuItem logout_item;
 
@@ -37,18 +37,20 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         new MenuInflater(this).inflate(R.menu.list,menu);
-        item = menu.findItem(R.id.add_wallet);
+        add_wallet_item = menu.findItem(R.id.add_wallet);
+        Log.d("wallet",String.valueOf(add_wallet_item.getItemId()));
         logout_item = menu.findItem(R.id.logout);
+        Log.d("logout",String.valueOf(logout_item.getItemId()));
         return super.onCreateOptionsMenu(menu);
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         switch (item.getItemId()){
-            case 2131231226:
+            case 2131230792:
                 Intent intent = new Intent(this, WalletsActivity.class);
                 startActivity(intent);
                 return true;
-            case 2131231251:
+            case 2131230972:
                 Intent logoutIntent = new Intent(this, LoginActivity.class);
                 startActivity(logoutIntent);
         }
@@ -95,12 +97,14 @@ public class HomeActivity extends AppCompatActivity {
         tabsLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                item.setVisible(tab.getPosition() == 1);
+                add_wallet_item.setVisible(tab.getPosition() == 1);
                 logout_item.setVisible(tab.getPosition() == 0);
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
+                add_wallet_item.setVisible(tab.getPosition() == 1);
+                logout_item.setVisible(tab.getPosition() == 0);
 
             }
 
