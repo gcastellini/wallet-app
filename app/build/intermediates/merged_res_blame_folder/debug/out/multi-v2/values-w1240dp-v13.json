@@ -1,0 +1,48 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\giuli\\.gradle\\daemon\\8.0\\com.example.wallet.app-mergeDebugResources-26:\\values-w1240dp-v13\\values-w1240dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\giuli\\AndroidStudioProjects\\Wallet\\app\\src\\main\\res\\values-w1240dp\\dimens.xml",
+                    "from": {
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "17,77",
+                        "endColumns": "58,42",
+                        "endOffsets": "71,115"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,114",
+                        "endColumns": "58,42",
+                        "endOffsets": "109,152"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.example.wallet.app-mergeDebugResources-26:/values-w1240dp-v13/values-w1240dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\giuli\\AndroidStudioProjects\\Wallet\\app\\src\\main\\res\\values-w1240dp\\dimens.xml",
+                    "from": {
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "17,77",
+                        "endColumns": "58,42",
+                        "endOffsets": "71,115"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,114",
+                        "endColumns": "58,42",
+                        "endOffsets": "109,152"
+                    }
+                }
+            ]
+        }
+    ]
+}

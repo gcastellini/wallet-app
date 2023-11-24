@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_wallet">Add Wallet</string>
+    <string name="amount">Amount</string>
+    <string name="app_name">Wallet</string>
+    <string name="language">Select a language</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="new_wallet">New Wallet</string>
+    <string name="pass">Password</string>
+    <string name="save">Save</string>
+    <string name="total">Total Wallets Value</string>
+    <string name="username">Username</string>
+    <string name="wallet_name">Wallet Name</string>
+</resources>

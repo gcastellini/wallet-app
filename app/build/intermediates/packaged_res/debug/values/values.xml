@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <string name="add_wallet">Add Wallet</string>
+    <string name="amount">Amount</string>
+    <string name="app_name">Wallet</string>
+    <string name="language">Select a language</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="new_wallet">New Wallet</string>
+    <string name="pass">Password</string>
+    <string name="save">Save</string>
+    <string name="total">Total Wallets Value</string>
+    <string name="username">Username</string>
+    <string name="wallet_name">Wallet Name</string>
+    <style name="Base.Theme.Wallet" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.Wallet" parent="Base.Theme.Wallet"/>
+</resources>
